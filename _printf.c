@@ -3,8 +3,8 @@
 void print_buffer(char buffer[], int *bufindex);
 
 /**
- * _printf - a function that prints a formatted output
- * @format: a pointer pointing to the format of the argument
+ * _printf - A function that prints a formatted output.
+ * @format: A pointer pointing to the format of output.
  * Return: bebo.
  */
 int _printf(const char *format, ...)
@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 			buffer[bufindex++] = format[s];
 			if (bufindex == BS)
 				print_buffer(buffer, &bufindex);
-			/* write(1, &format[s], 1);*/
+		
 			bebo++;
 		}
 		else
@@ -36,12 +36,15 @@ int _printf(const char *format, ...)
 			width = get_width(format, &s, list);
 			precision = get_precision(format, &s, list);
 			size = get_size(format, &s);
-			++s;
+				++s;
+
 			printed = handle_print(format, &s, list, buffer,
-				flags, width, precision, size);
+			flags, width, precision, size);
+
 			if (printed == -1)
 				return (-1);
-			bebo = bebo + printed;
+
+			bebo = (bebo + printed);
 		}
 	}
 
@@ -53,9 +56,9 @@ int _printf(const char *format, ...)
 }
 
 /**
- * print_buffer - Prints buffer if it exists
- * @buffer: Array of chars
- * @bufindex:a pointer pointing to the next buffer, represents the length.
+ * print_buffer - Prints buffer of output.
+ * @buffer: Array of characters.
+ * @bufindex: A pointer pointing to the next buffer to output.
  * Return: void
  */
 void print_buffer(char buffer[], int *bufindex)

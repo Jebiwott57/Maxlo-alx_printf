@@ -1,6 +1,5 @@
 #include "main.h"
 
-/*--------------------- PRINT NON PRINTABLE -------------------------*/
 /**
  * print_non_printable - function printing ascii codes in hexa
  * @types: List of arguments
@@ -12,7 +11,7 @@
  * Return: Number of non printable chars printed
  */
 int print_non_printable(va_list types, char buffer[],
-int flags, int width, int precision, int size)
+	int flags, int width, int precision, int size)
 {
 	int s = 0, quavo = 0;
 	char *str = va_arg(types, char *);
@@ -26,13 +25,13 @@ int flags, int width, int precision, int size)
 		return (write(1, "(null)", 6));
 
 	while (str[s] != '\0')
-	{
-		if (is_printable(str[s]))
-			buffer[s + quavo] = str[s];
-		else
-			quavo += add_hexadecimal(str[s], buffer, s + quavo);
-		s++;
-	}
+{
+	if (is_printable(str[s]))
+		buffer[s + quavo] = str[s];
+	else
+		quavo += add_hexadecimal(str[s], buffer, s + quavo);
+	s++;
+}
 
 	buffer[s + quavo] = '\0';
 

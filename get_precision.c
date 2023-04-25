@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * get_precision - a function that produces the precision for the output
- * @format: pointer to the format of the string
- * @i: List of arguments to be printed.
+ * get_precision - A function that produces the precision for the output.
+ * @format: Pointer to the format of the string.
+ * @i: List of arguments to print.
  * @list: list of arguments.
  *
- * Return: Precision.
+ * Return: precision.
  */
 int get_precision(const char *format, int *i, va_list list)
 {
@@ -17,13 +17,14 @@ int get_precision(const char *format, int *i, va_list list)
 		return (precision);
 
 	precision = 0;
-	math = math + 1;
+
+	math = (math + 1);
 	for (; format[math] != '\0'; math++)
 	{
 		if (is_digit(format[math]))
 		{
-			precision = precision * 10;
-			precision = precision + format[math] - '0';
+			precision = (precision * 10);
+			precision = (precision + (format[math] - '0'));
 		}
 		else if (format[math] == '*')
 		{
