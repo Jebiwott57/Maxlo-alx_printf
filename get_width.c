@@ -2,7 +2,7 @@
 
 /**
  * get_width - a function that prints the width
- * @format a pointer pointing to the argument to print
+ * @format: a pointer pointing to the argument to print
  * @i: List of arguments to be printed.
  * @list: list of arguments.
  *
@@ -12,7 +12,7 @@ int get_width(const char *format, int *i, va_list list)
 {
 	int math;
 	int width;
-	
+
 	math = *i + 1;
 	for (; format[math] != '\0'; math++)
 	{
