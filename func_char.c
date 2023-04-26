@@ -1,7 +1,5 @@
 #include "main.h"
 
-/*----------------------- PRINT CHAR -------------------------*/
-
 /**
  * print_char - a function that prints a char
  * @types: List a of arguments

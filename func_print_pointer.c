@@ -1,7 +1,7 @@
 #include "main.h"
 
-/**
- * print_pointer - a function that prints the value of a pointer
+/*
+ * print_pointer- a function that prints pointer variables
  * @types: List of arguments
  * @buffer: The array to print a pointer
  * @flags:  Determines active flags
@@ -40,7 +40,7 @@ int print_pointer(va_list types, char buffer[],
 	if (flags & F_PLUS)
 		extra = '+', length++;
 	else if (flags & F_SPACE)
-		extra = ' ', length++;
+	extra = ' ', length++;
 
 	s++;
 
