@@ -1,8 +1,7 @@
 #include "main.h"
 
 /**
- * print_hexadecimal - a function that prints
- * an unsigned number in hexadecimal notation
+ * print_hexadecimal - a function that prints unsign num in hexadecimal note
  * @types: List of arguments
  * @buffer: The array to print unsigned nums in hexa notation
  * @flags:  Determines active flags
@@ -15,5 +14,5 @@ int print_hexadecimal(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	return (print_hexa(types, "0123456789abcdef", buffer,
-		flags, 'x', width, precision, size));
+			flags, 'x', width, precision, size));
 }

@@ -1,20 +1,24 @@
 #include "main.h"
 
 /**
- * print_unsigned - a function that prints an unsigned number
+ * print_octal - a function that prints an unsigned number in octal notation
  * @types: List of arguments
- * @buffer: The array to print unsigned nums
+ * @buffer: The array to print unsigned nums in octal notation
  * @flags:  Determines active flags
  * @width: get width
  * @precision: Precision specification
  * @size: Size specifier
- * Return: Number of unsigned nums printed.
+ * Return: Number of unsigned nums in octal notation printed
  */
-int print_unsigned(va_list types, char buffer[],
-	int flags, int width, int precision, int size)
+int print_octal(va_list types, char buffer[],
+		int flags, int width, int precision, int size)
 {
+
 	int s = BS - 2;
 	unsigned long int num = va_arg(types, unsigned long int);
+	unsigned long int init_num = num;
+
+	UNUSED(width);
 
 	num = convert_size_unsgnd(num, size);
 
@@ -25,9 +29,12 @@ int print_unsigned(va_list types, char buffer[],
 
 	while (num > 0)
 	{
-		buffer[s--] = (num % 10) + '0';
-		num /= 10;
+		buffer[s--] = (num % 8) + '0';
+		num /= 8;
 	}
+
+	if (flags & F_HASH && init_num != 0)
+		buffer[s--] = '0';
 
 	s++;
 

@@ -40,6 +40,7 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 		buffer[s--] = flag_ch;
 		buffer[s--] = '0';
 	}
+
 	s++;
 
 	return (write_unsigned_num(0, s, buffer, flags, width, precision, size));

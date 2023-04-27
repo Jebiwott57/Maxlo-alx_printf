@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * handle_write_char - Prints a string
  * @c: Character specifier.
@@ -10,10 +11,10 @@
  *
  * Return: characters in output.
  */
-int handle_write_char(char c, char buffer[],
-	int flags, int width, int __attribute__((__unused__)) precision,
+int handle_write_char(char c, char buffer[], int flags,
+	int width, int __attribute__((__unused__)) precision,
 	int size)
-{ /* left justified character to print */
+{/* left justified character to print */
 	int s = 0;
 	char padd = ' ';
 
@@ -55,7 +56,7 @@ int handle_write_char(char c, char buffer[],
  * Return: Number of chars printed.
  */
 int write_number(int is_negative, int ind, char buffer[], int flags,
-		int width, int precision, int __attribute__((__unused__)) size)
+	int width, int precision, int __attribute__((__unused__)) size)
 {
 	int length = BS - ind - 1;
 	char padd = ' ', extra_ch = 0;
