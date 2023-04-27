@@ -1,5 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
+
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -43,7 +44,7 @@ typedef struct fmt fmt_t;
 int _printf(const char *format, ...);
 
 /* handler_print.c */
-int handle_print(const char *fmt, int *i,
+int handle_print(const char *fmt, int *ind,
 va_list list, char buffer[], int flags, int width, int precision, int size);
 
 /* func_char.c */
@@ -62,11 +63,11 @@ int flags, int width, int precision, int size);
 int print_int(va_list types, char buffer[],
 int flags, int width, int precision, int size);
 
-/*  */
+/* func_unsign_int.c */
 int print_binary(va_list types, char buffer[],
 int flags, int width, int precision, int size);
 
-/*  */
+/* func_unsign_num.c */
 int print_unsigned(va_list types, char buffer[],
 int flags, int width, int precision, int size);
 
@@ -114,21 +115,24 @@ int flags, int width, int precision, int size);
 int print_rot13string(va_list types, char buffer[],
 int flags, int width, int precision, int size);
 
-/* width_handler.c */
+/* write_handler.c */
+int write_unsgnd(int is_negative, int ind, char buffer[],
+int flags, int width, int precision, int size);
+
 int handle_write_char(char c, char buffer[],
 int flags, int width, int precision, int size);
 
-int write_number(int is_positive, int ind, char buffer[],
+int write_number(int is_negative, int ind, char buffer[],
 int flags, int width, int precision, int size);
 
 /* write-num.c */
-int write_num(int index, char bff[], int flags, int width, int precision,
+int write_num(int index, char buffer[], int flags, int width, int precision,
 int length, char a, char extra);
 
 int write_unsigned_num(int is_negative, int index,
 char buffer[], int flags, int width, int precision, int size);
 
-/* func_print_pointer.c */
+/* write_handler_b.c */
 int write_pointer(char buffer[], int ind, int length,
 int width, int flags, char padd, char extra_c, int padd_start);
 
@@ -136,13 +140,15 @@ int width, int flags, char padd, char extra_c, int padd_start);
 int is_printable(char);
 
 /* hexadecimal.c */
-int add_hexadecimal(char, char[], int);
+int add_hexadecimal(char ascii_code, char buffer[], int s);
 
 /* is-digit.c */
 int is_digit(char);
 
 /* num-size.c */
 long int convert_size_number(long int num, int size);
+
+/* print-num_to_size */
 long int convert_size_unsgnd(unsigned long int num, int size);
 
 #endif
