@@ -19,6 +19,9 @@
 #define S_LONG 2
 #define S_SHORT 1
 
+#define FLAG_CH
+#define FLAGS_ACC
+
 /**
  * struct fmt - Struct op
  *
