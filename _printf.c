@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	int s, printed = 0, bebo = 0;
 	int flags, width, precision, size, bufindex = 0;
 	va_list list;
-	char buffer[BS];OA
+	char buffer[BS];
 
 	if (format == NULL)
 		return (-1);
