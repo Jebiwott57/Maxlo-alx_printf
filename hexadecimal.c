@@ -1,12 +1,7 @@
 #include "main.h"
 
 /**
-<<<<<<< HEAD
- * add_hexadecimal - A function that adds ascci in hexadecimal
- * to buffer for output.
-=======
  * add_hexadecimal - Add ascci in hexadecimal to buffer
->>>>>>> max-practice
  * @buffer: Array of chars.
  * @s: Index at which to start appending.
  * @ascii_code: ASSCI CODE.

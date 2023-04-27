@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 			buffer[bufindex++] = format[s];
 			if (bufindex == BS)
 				print_buffer(buffer, &bufindex);
-		
+
 			bebo++;
 		}
 		else
